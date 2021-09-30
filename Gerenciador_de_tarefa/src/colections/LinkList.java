@@ -67,7 +67,7 @@ public class LinkList<T> implements Iterator{
 		return (T) data.getData();
 	}
 	
-	public MyLinkedList() {
+	public LinkList() {
 		this.size = 0;
 		this.index = this.inicio;
 	}
