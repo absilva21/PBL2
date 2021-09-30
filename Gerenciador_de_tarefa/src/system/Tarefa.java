@@ -14,6 +14,13 @@ public class Tarefa implements Observer {
 	static final String EM_EXECUCAO = "Em execução";
 	static final String FINALIZADO = "Finalizada";
 	
+	public Tarefa(String title, String descri, Date data) {
+		titulo = title;
+		descricao = descri;
+		previsao = data;
+		marcarPedente();
+	}
+	
 	public String getTitulo() {
 		return titulo;
 	}
