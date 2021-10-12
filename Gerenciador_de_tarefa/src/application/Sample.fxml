@@ -8,12 +8,11 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
    <children>
-      <FlowPane layoutX="-1.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0">
+      <FlowPane layoutX="6.0" layoutY="10.0" prefHeight="385.0" prefWidth="593.0">
          <children>
-            <Button fx:id="add" mnemonicParsing="false" onAction="#addOnAction" prefHeight="57.0" prefWidth="78.0" text="+">
+            <Button fx:id="add" mnemonicParsing="false" prefHeight="82.0" prefWidth="85.0" text="+">
                <font>
                   <Font size="31.0" />
                </font>

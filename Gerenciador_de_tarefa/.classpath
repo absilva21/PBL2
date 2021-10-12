@@ -6,11 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="/home/alisson/Downloads/openjfx-17_linux-x64_bin-sdk/javafx-sdk-17/lib/javafx.base.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
