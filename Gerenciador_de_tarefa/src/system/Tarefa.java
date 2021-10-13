@@ -2,19 +2,18 @@ package system;
 
 import java.util.Observable;
 import java.util.Observer;
-import java.util.Date;
-
+import java.util.GregorianCalendar;
 public class Tarefa implements Observer {
 	private String titulo;
 	private String descricao;
-	private Date previsao;
+	private GregorianCalendar previsao;
 	private String situacao;
 	
 	static final String PEDENTE = "Pendente";
 	static final String EM_EXECUCAO = "Em execução";
 	static final String FINALIZADO = "Finalizada";
 	
-	public Tarefa(String title, String descri, Date data) {
+	public Tarefa(String title, String descri, GregorianCalendar data) {
 		titulo = title;
 		descricao = descri;
 		previsao = data;
@@ -33,10 +32,10 @@ public class Tarefa implements Observer {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Date getPrevisao() {
+	public GregorianCalendar getPrevisao() {
 		return previsao;
 	}
-	public void setPrevisao(Date previsao) {
+	public void setPrevisao(GregorianCalendar previsao) {
 		this.previsao = previsao;
 	}
 	public String getSituacao() {
