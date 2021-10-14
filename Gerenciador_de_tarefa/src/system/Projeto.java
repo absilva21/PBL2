@@ -33,9 +33,9 @@ public class Projeto {
 		this.titulo = titulo;
 	}
 	
-	public void addTarefa(String title, String descri, GregorianCalendar data) {
-		Tarefa n = new Tarefa(title,descri,data);
-		tarefas.add(n);
+	public void addTarefa(Tarefa nova) {
+		
+		tarefas.add(nova);
 	}
 	
 	public Tarefa BuscarPeloTitulo(String titl) {

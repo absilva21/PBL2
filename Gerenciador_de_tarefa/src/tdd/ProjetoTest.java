@@ -3,12 +3,12 @@ package tdd;
 import static org.junit.Assert.*;
 import system.Projeto;
 import system.Tarefa;
-import java.util.Date;
+import java.util.GregorianCalendar;
 import org.junit.Test;
 
 public class ProjetoTest {
-	Projeto a = Projeto("Projeto x","criar algo");
-	Tarefa x1 = new Tarefa("fazer classe x","implentar a classe x", new Date()); 
+	Projeto a = new Projeto("Projeto x","criar algo");
+	Tarefa x1 = new Tarefa("fazer classe x","implentar a classe x", new GregorianCalendar(2021,9,14,19,0)); 
 
 	/**
 	 * Testa se a tarefa foi adicionada com sucesso
@@ -32,8 +32,8 @@ public class ProjetoTest {
 	 */
 	@Test
 	public void editarTarefaTest() {
-		a.editarTarefa("fazer classe x","fsd vlsdr x","implementar a classe x", 121425152);
-		AssertEquals(a.buscarPeloTitulo("fsd vlsdr x"),x1);
+		a.editarTarefa("fazer classe x","fsd vlsdr x","implementar a classe x",new GregorianCalendar(2021,9,14,19,0),"Pendente");
+		AssertEquals(a.BuscarPeloTitulo("fsd vlsdr x"),x1);
 	}
 	
 	/**
