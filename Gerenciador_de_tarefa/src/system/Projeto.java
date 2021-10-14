@@ -57,6 +57,19 @@ public class Projeto {
 		return b;
 	}
 	
+	public boolean editarTarefa(String title,String newtitle,String newDescri,GregorianCalendar newPrevi, String newSitua) {
+		Tarefa a = this.BuscarPeloTitulo(title);
+		
+		if(a!=null) {
+			a.setDescricao(newDescri);
+			a.setPrevisao(newPrevi);
+			a.setTitulo(newtitle);
+			a.setSituacao(newSitua);
+			
+		}
+		return a!=null;
+	}
+	
 	public void excluirtarefa(String title) {
 		int posi = 0;
 		tarefas.resetIndex();

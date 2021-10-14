@@ -44,17 +44,14 @@ public class SystemGerenciador {
 	
 	public boolean editarProjeto(String title, String newTitle,String newDescicao) {
 		Projeto a = this.buscarPeloTitulo(title);
-		boolean existe = false;
-		if(a!=null) {
-			existe = true;
-		}
 		
-		if(existe) {
+	
+		if(a!=null) {
 			a.setTitulo(newTitle);
 			a.setDescricao(newDescicao);
 		}
 		
-		return existe;
+		return a!=null;
 		
 	}
 	
