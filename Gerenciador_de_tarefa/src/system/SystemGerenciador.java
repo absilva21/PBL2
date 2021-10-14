@@ -42,6 +42,22 @@ public class SystemGerenciador {
 		return b;
 	}
 	
+	public boolean editarProjeto(String title, String newTitle,String newDescicao) {
+		Projeto a = this.buscarPeloTitulo(title);
+		boolean existe = false;
+		if(a!=null) {
+			existe = true;
+		}
+		
+		if(existe) {
+			a.setTitulo(newTitle);
+			a.setDescricao(newDescicao);
+		}
+		
+		return existe;
+		
+	}
+	
 	public void apagarProjeto(String title) {
 		int posi = 0;
 		projetos.resetIndex();
