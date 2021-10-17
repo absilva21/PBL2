@@ -1,5 +1,5 @@
 package system;
-import java.util.Date;
+
 import java.util.GregorianCalendar;
 import colections.LinkList;
 public class Projeto {
@@ -38,7 +38,7 @@ public class Projeto {
 		tarefas.add(nova);
 	}
 	
-	public Tarefa BuscarPeloTitulo(String titl) {
+	public Tarefa buscarPeloTitulo(String titl) {
 		tarefas.resetIndex();
 		Tarefa a = (Tarefa) tarefas.next();
 		Tarefa b = null;
@@ -58,7 +58,7 @@ public class Projeto {
 	}
 	
 	public boolean editarTarefa(String title,String newtitle,String newDescri,GregorianCalendar newPrevi, String newSitua) {
-		Tarefa a = this.BuscarPeloTitulo(title);
+		Tarefa a = this.buscarPeloTitulo(title);
 		
 		if(a!=null) {
 			a.setDescricao(newDescri);
@@ -70,7 +70,7 @@ public class Projeto {
 		return a!=null;
 	}
 	
-	public void excluirtarefa(String title) {
+	public void excluirTarefa(String title) {
 		int posi = 0;
 		tarefas.resetIndex();
 		Tarefa a = (Tarefa) tarefas.next();

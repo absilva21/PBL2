@@ -19,7 +19,7 @@ public class ProjetoTest {
 		assertEquals(x1,a.getTarefas().getInicio().getData());
 	}	
 	
-	/**
+	/** 
 	 * testa se a tarefa foi excluida com sucesso
 	 */
 	@Test
@@ -33,7 +33,7 @@ public class ProjetoTest {
 	@Test
 	public void editarTarefaTest() {
 		a.editarTarefa("fazer classe x","fsd vlsdr x","implementar a classe x",new GregorianCalendar(2021,9,14,19,0),"Pendente");
-		AssertEquals(a.BuscarPeloTitulo("fsd vlsdr x"),x1);
+		AssertEquals(a.buscarPeloTitulo("fsd vlsdr x"),x1);
 	}
 	
 	/**
