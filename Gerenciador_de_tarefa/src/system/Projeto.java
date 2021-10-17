@@ -7,6 +7,11 @@ public class Projeto {
 	private String descricao;
 	private String titulo;
 	
+	/**
+	 * Inicializa o titulo e a descrição do Projeto
+	 * @param titul
+	 * @param descrica
+	 */
 	public Projeto(String titul, String descrica){
 		titulo = titul;
 		descricao = descrica;
@@ -32,12 +37,21 @@ public class Projeto {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	
+	/**
+	 * adiciona uma nova tarefa no projeto
+	 * @param nova
+	 */
 	public void addTarefa(Tarefa nova) {
 		
 		tarefas.add(nova);
 	}
 	
+	/**
+	 * faz um Iterator e encontra uma tarefa na LinkList 
+	 * pelo título.
+	 * @param titl
+	 * @return
+	 */
 	public Tarefa buscarPeloTitulo(String titl) {
 		tarefas.resetIndex();
 		Tarefa a = (Tarefa) tarefas.next();
@@ -57,6 +71,15 @@ public class Projeto {
 		return b;
 	}
 	
+	/**
+	 * busca uma tarefa pelo título e edita seus parâmetros
+	 * @param title
+	 * @param newtitle
+	 * @param newDescri
+	 * @param newPrevi
+	 * @param newSitua
+	 * @return
+	 */
 	public boolean editarTarefa(String title,String newtitle,String newDescri,GregorianCalendar newPrevi, String newSitua) {
 		Tarefa a = this.buscarPeloTitulo(title);
 		
@@ -69,7 +92,10 @@ public class Projeto {
 		}
 		return a!=null;
 	}
-	
+	/**
+	 * exclui uma Tarefa pelo título
+	 * @param title
+	 */
 	public void excluirTarefa(String title) {
 		int posi = 0;
 		tarefas.resetIndex();
