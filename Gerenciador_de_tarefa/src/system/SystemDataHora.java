@@ -27,7 +27,14 @@ public class SystemDataHora extends TimerTask {
 		while(true) {
 			clock = new GregorianCalendar();
 			observers.resetIndex();
-			
+			Tarefa a = (Tarefa)observers.next();
+			while(observers.getIndex()!=null) {
+				GregorianCalendar data = a.getPrevisao();
+				if(clock.after(data)) {
+					a.marcarPedente();
+				}
+				a = observers.next();
+			}
 		}
 	}
 
