@@ -1,18 +1,25 @@
 package system;
 
-import java.util.Observable;
-import java.util.Observer;
 import java.util.GregorianCalendar;
-public class Tarefa implements Observer {
+public class Tarefa{
 	private String titulo;
 	private String descricao;
 	private GregorianCalendar previsao;
 	private String situacao;
-	
+	/**
+	 * constantes para pradronizar a situação da tarefa
+	 * @apiNote
+	 */
 	static final String PEDENTE = "Pendente";
 	static final String EM_EXECUCAO = "Em execução";
 	static final String FINALIZADO = "Finalizada";
 	
+	/**
+	 * Cria uma nova tarefa inserindo título descrição e previsão
+	 * @param title
+	 * @param descri
+	 * @param data
+	 */
 	public Tarefa(String title, String descri, GregorianCalendar data) {
 		titulo = title;
 		descricao = descri;
@@ -44,12 +51,8 @@ public class Tarefa implements Observer {
 	public void setSituacao(String situacao) {
 		this.situacao = situacao;
 	}
-	@Override
-	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-
-	}
 	
+
 	public void marcarPedente() {
 		situacao = Tarefa.PEDENTE;
 	}
