@@ -4,7 +4,17 @@ import colections.LinkList;
 
 public class SystemGerenciador {
 	LinkList<Projeto> projetos;
+	SystemDataHora sysClock = new SystemDataHora(); 
 	
+	
+	public SystemDataHora getSysClock() {
+		return sysClock;
+	}
+
+	public void setSysClock(SystemDataHora sysClock) {
+		this.sysClock = sysClock;
+	}
+
 	public SystemGerenciador() {
 		projetos = new <Projeto>LinkList();
 	}

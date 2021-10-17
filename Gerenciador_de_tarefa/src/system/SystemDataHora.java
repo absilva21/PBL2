@@ -49,5 +49,25 @@ public class SystemDataHora extends TimerTask {
 		this.clock = clock;
 	}
 	
+	public void add(Tarefa observer) {
+		observers.add(observer);
+	}
+	
+	public void remove(String title) {
+		int posi = 0;
+		observers.resetIndex();
+		Tarefa a = (Tarefa) observers.next();
+		
+		while(observers.getIndex()!=null) {
+			if(a.getTitulo().equals(title)){
+				observers.remove(posi);
+				break;
+			}else {
+				posi++;
+				a = observers.next();
+			}
+			
+		}
+	}
 	 
 }
