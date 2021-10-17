@@ -6,8 +6,12 @@ import colections.LinkList;
 
 public class SystemDataHora extends TimerTask {
 	
-	public SystemDataHora(LinkList<Tarefa> list) {
-		observers = list;
+	GregorianCalendar clock;
+	LinkList<Tarefa> observers;
+	
+	
+	public SystemDataHora() {
+		observers = new <Tarefa>LinkList();
 	}
 	
 	public LinkList<Tarefa> getObservers() {
@@ -18,8 +22,7 @@ public class SystemDataHora extends TimerTask {
 		this.observers = observers;
 	}
 
-	GregorianCalendar clock;
-	LinkList<Tarefa> observers;
+	
 	
 	@Override
 	public void run() {
@@ -45,4 +48,6 @@ public class SystemDataHora extends TimerTask {
 	public void setClock(GregorianCalendar clock) {
 		this.clock = clock;
 	}
+	
+	 
 }

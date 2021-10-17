@@ -7,6 +7,8 @@ import static org.junit.Assert.*;
 import java.util.*;
 import org.junit.Test;
 import system.Tarefa;
+import system.SystemDataHora;
+import java.util.GregorianCalendar;
 /**
  * @author alisson
  *
@@ -14,7 +16,7 @@ import system.Tarefa;
 public class TarefaTest {
 	
 	
-	Tarefa a = new Tarefa("Fazer classe 'x'","Criar a classe x com antecedencia",new Date());
+	Tarefa a = new Tarefa("Fazer classe 'x'","Criar a classe x com antecedencia",new GregorianCalendar());
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -50,7 +52,7 @@ public class TarefaTest {
 	 */
 	@Test
 	public void updateTest() {
-		SystemHoraData sys = SystemHoraData();
+		SystemHoraData sys = new SystemDataHora();
 		sys.add(a);
 		assertEquals("Pendente",a.getSituacao());
 		
