@@ -74,6 +74,9 @@ public class Projeto {
 		int posi = 0;
 		tarefas.resetIndex();
 		Tarefa a = (Tarefa) tarefas.next();
+		if(a.getTitulo().equals(title)){
+			tarefas.remove(posi);
+		}
 		
 		while(tarefas.getIndex()!=null) {
 			if(a.getTitulo().equals(title)){

@@ -24,6 +24,7 @@ public class ProjetoTest {
 	 */
 	@Test
 	public void excluirTarefaTest() {
+		a.addTarefa(x1);
 		a.excluirTarefa("fazer classe x");
 		assertTrue(a.getTarefas().isEmpty());
 	}
@@ -32,6 +33,7 @@ public class ProjetoTest {
 	 */
 	@Test
 	public void editarTarefaTest() {
+		a.addTarefa(x1);
 		a.editarTarefa("fazer classe x","fsd vlsdr x","implementar a classe x",new GregorianCalendar(2021,9,14,19,0),"Pendente");
 		assertEquals(a.buscarPeloTitulo("fsd vlsdr x"),x1);
 	}
@@ -41,6 +43,7 @@ public class ProjetoTest {
 	 */
 	@Test
 	public void buscarPeloTituloTest() {
+		a.addTarefa(x1);
 		assertEquals(a.buscarPeloTitulo("fazer classe x"),x1);
 	}
 
