@@ -33,7 +33,7 @@ public class ProjetoTest {
 	@Test
 	public void editarTarefaTest() {
 		a.editarTarefa("fazer classe x","fsd vlsdr x","implementar a classe x",new GregorianCalendar(2021,9,14,19,0),"Pendente");
-		AssertEquals(a.buscarPeloTitulo("fsd vlsdr x"),x1);
+		assertEquals(a.buscarPeloTitulo("fsd vlsdr x"),x1);
 	}
 	
 	/**
@@ -41,7 +41,7 @@ public class ProjetoTest {
 	 */
 	@Test
 	public void buscarPeloTituloTest() {
-		AssetEquals(a.buscarPeloTitulo("fazer classe x"),x1);
+		assertEquals(a.buscarPeloTitulo("fazer classe x"),x1);
 	}
 
 }
