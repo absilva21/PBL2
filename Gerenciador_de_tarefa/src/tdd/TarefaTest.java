@@ -47,15 +47,6 @@ public class TarefaTest {
 		assertEquals("Finalizada",a.getSituacao());
 		
 	}
-	/**
-	 * testa se a tarefa está pedendete após atraso
-	 */
-	@Test
-	public void updateTest() {
-		SystemHoraData sys = new SystemDataHora();
-		sys.add(a);
-		assertEquals("Pendente",a.getSituacao());
-		
-	}
+	
 
 }
