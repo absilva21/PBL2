@@ -24,4 +24,11 @@ public class SampleController {
     	Main.aux.setScene(sceneform);
      
     }
+    
+    @FXML
+    void backOnAction(ActionEvent event) throws IOException {
+    	AnchorPane form = (AnchorPane)FXMLLoader.load(getClass().getResource("Sample.fxml"));
+    	Scene sceneform = new Scene(form,600,400);
+    	Main.aux.setScene(sceneform);
+    }
 }
