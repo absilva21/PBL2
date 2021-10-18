@@ -69,6 +69,9 @@ public class SystemGerenciador {
 		int posi = 0;
 		projetos.resetIndex();
 		Projeto a = (Projeto) projetos.next();
+		if(a.getTitulo().equals(title)){
+			projetos.remove(posi);
+		}
 		
 		while(projetos.getIndex()!=null) {
 			if(a.getTitulo().equals(title)){
