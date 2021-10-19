@@ -1,15 +1,31 @@
 package tdd;
-
 import static org.junit.Assert.*;
 import org.junit.Test;
 import system.SystemGerenciador;
 import system.Projeto;
+/*******************************************************************************
+Autor: Alisson Bomfim da Silva e Alexandre Silva Carib�
+Componente Curricular: Algoritmos e Programa��o II
+Concluido em: 14/10/2011
+Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
+trecho de código de outro colega ou de outro autor, tais como provindos de livros e
+apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
+de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
+do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
+******************************************************************************************/
+/**
+ * @author alisson
+ * @author Alexandre
+ */
+/**
+ * Testes de unidade para a classe {@link SystemGerenciador}
+ */
 
 public class SystemGerenciadorTest {
 	
 	SystemGerenciador sys;
 	/**
-	 * testa a criação de um Projeto
+	 * Teste de unidade que verifica se a cria��o de um Projeto ocorreu com sucesso
 	 */
 	@Test
 	public void criarProjetoTest() {
@@ -20,7 +36,7 @@ public class SystemGerenciadorTest {
 	}
 	
 	/**
-	 * Testa o método de busca 
+	 * Teste de unidade que verifica se o m�todo de busca de um Projeto ocorreu com sucesso
 	 */
 	@Test
 	public void buscarPeloTituloTest() {
@@ -29,7 +45,7 @@ public class SystemGerenciadorTest {
 		assertEquals("projeto x", sys.buscarPeloTitulo("projeto x").getTitulo());
 	}
 	/**
-	 * testa a edição dos parâmetros de um Projeto
+	 * Teste de unidade que verifica se a edi��o dos parametros de um Projeto ocorreu com sucesso
 	 */
 	@Test
 	public void editarProjetoTest() {
@@ -40,7 +56,8 @@ public class SystemGerenciadorTest {
 	}
 	
 	/**
-	 * testa a exclusão  de um Projeto da Lista
+	 * Teste de unidade que verifica se a exclus�o de um Projeto ocorreu com sucesso
+	 * testa a 
 	 */
 	@Test
 	public void apagarProjetoTest() {
@@ -50,6 +67,4 @@ public class SystemGerenciadorTest {
 		sys.apagarProjeto("projeto x");
 		assertTrue(sys.getProjetos().isEmpty());
 	}
-	
-
 }
