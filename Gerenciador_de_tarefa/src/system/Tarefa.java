@@ -1,5 +1,19 @@
 package system;
-
+/*******************************************************************************
+Autor: Alisson Bomfim da Silva e Alexandre Silva CaribÈ
+Componente Curricular: Algoritmos e ProgramaÁ„o II
+Concluido em: 14/10/2011
+Declaro que este c√≥digo foi elaborado por mim de forma individual e n√£o cont√©m nenhum
+trecho de c√≥digo de outro colega ou de outro autor, tais como provindos de livros e
+apostilas, e p√°ginas ou documentos eletr√¥nicos da Internet. Qualquer trecho de c√≥digo
+de outra autoria que n√£o a minha est√° destacado com uma cita√ß√£o para o autor e a fonte
+do c√≥digo, e estou ciente que estes trechos n√£o ser√£o considerados para fins de avalia√ß√£o.
+******************************************************************************************/
+/**
+ * A classe Tarefa define as tarefas criadas pelo usu·rio para acompanhar seu gerenciador
+ * @author alisson
+ * @author Alexandre
+ */
 import java.util.GregorianCalendar;
 public class Tarefa{
 	private String titulo;
@@ -7,62 +21,97 @@ public class Tarefa{
 	private GregorianCalendar previsao;
 	private String situacao;
 	/**
-	 * constantes para pradronizar a situa√ß√£o da tarefa
+	 * Constantes para padronizar a situaÁ„o da tarefa
 	 * @apiNote
 	 */
-	static final String PEDENTE = "Pendente";
-	static final String EM_EXECUCAO = "Em execu√ß√£o";
+	static final String PENDENTE = "Pendente";
+	static final String EM_EXECUCAO = "Em execuÁ„o";
 	static final String FINALIZADO = "Finalizada";
 	
 	/**
-	 * Cria uma nova tarefa inserindo t√≠tulo descri√ß√£o e previs√£o
-	 * @param title
-	 * @param descri
-	 * @param data
+	 * Construtor de Tarefa que cria uma nova tarefa inserindo titulo descriÁ„o e previs„o de data
+	 * @param title, do tipo String e se refere ao titulo da Tarefa
+	 * @param descri, do tipo String e se refere a descriÁ„o da Tarefa
+	 * @param data, do tipo GregorianCalendar e se refere a data de previs„o de conclus„o da Tarefa
 	 */
 	public Tarefa(String title, String descri, GregorianCalendar data) {
 		titulo = title;
 		descricao = descri;
 		previsao = data;
-		marcarPedente();
+		marcarPendente();
 	}
-	
+	/**
+	 * MÈtodo que devolve o Titulo da Tarefa
+	 * @return titulo, do tipo String e se refere ao titulo da Tarefa
+	 */
 	public String getTitulo() {
 		return titulo;
 	}
+	/**
+	 * MÈtodo que altera/seta o Titulo da Tarefa
+	 * @param titulo, do tipo String e se refere ao titulo da Tarefa
+	 */
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+	/**
+	 * MÈtodo que devolve a descriÁ„o da Tarefa
+	 * @return descricao, do tipo String e se refere a descriÁ„o da Tarefa
+	 */
 	public String getDescricao() {
 		return descricao;
 	}
+	/**
+	 * MÈtodo que altera/seta a descriÁ„o da Tarefa
+	 * @param descricao, do tipo String e se refere a descriÁ„o da Tarefa
+	 */
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	/**
+	 * MÈtodo que devolve a data de conclus„o da Tarefa
+	 * @return previsao, do tipo GregorianCalendar e se refere a data de conclus„o da Tarefa
+	 */
 	public GregorianCalendar getPrevisao() {
 		return previsao;
 	}
+	/**
+	 * MÈtodo que altera/seta a data de conclus„o da Tarefa
+	 * @param previsao, do tipo GregorianCalendar e se refere a data de conclus„o da Tarefa
+	 */
 	public void setPrevisao(GregorianCalendar previsao) {
 		this.previsao = previsao;
 	}
+	/**
+	 * MÈtodo que devolve a situaÁ„o da Tarefa
+	 * @return situacao, do tipo String e se refere a situaÁ„o da Tarefa
+	 */
 	public String getSituacao() {
 		return situacao;
 	}
+	/**
+	 * MÈtodo que altera/seta a situaÁ„o da Tarefa
+	 * @param situacao, do tipo String e se refere a situaÁ„o da Tarefa
+	 */
 	public void setSituacao(String situacao) {
 		this.situacao = situacao;
 	}
-	
-
-	public void marcarPedente() {
-		situacao = Tarefa.PEDENTE;
+	/**
+	 * MÈtodo que marca situaÁ„o da Tarefa como Pendente
+	 */
+	public void marcarPendente() {
+		situacao = Tarefa.PENDENTE;
 	}
-	
+	/**
+	 * MÈtodo que marca situaÁ„o da Tarefa como Em ExecuÁ„o
+	 */
 	public void marcarExecucao() {
 		situacao = Tarefa.EM_EXECUCAO;
 	}
-	
+	/**
+	 * MÈtodo que marca situaÁ„o da Tarefa como Finalizada
+	 */
 	public void marcarFinalizada() {
 		situacao = Tarefa.FINALIZADO;
 	}
-
 }

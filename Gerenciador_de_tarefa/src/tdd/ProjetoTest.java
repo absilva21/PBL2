@@ -1,18 +1,46 @@
 package tdd;
-
 import static org.junit.Assert.*;
 import system.Projeto;
 import system.Tarefa;
 import java.util.GregorianCalendar;
+import org.junit.Before;
 import org.junit.Test;
 
-public class ProjetoTest {
-	Projeto a = new Projeto("Projeto x","criar algo");
-	Tarefa x1 = new Tarefa("fazer classe x","implentar a classe x", new GregorianCalendar(2021,9,14,19,0)); 
+/*******************************************************************************
+Autor: Alisson Bomfim da Silva e Alexandre Silva Carib�
+Componente Curricular: Algoritmos e Programa��o II
+Concluido em: 14/10/2011
+Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
+trecho de código de outro colega ou de outro autor, tais como provindos de livros e
+apostilas, e páginas ou documentos eletrônicos da Internet. Qualquer trecho de código
+de outra autoria que não a minha está destacado com uma citação para o autor e a fonte
+do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
+******************************************************************************************/
+/**
+ * @author alisson
+ * @author Alexandre
+ */
+/**
+ * Testes de unidade para a classe {@link Projeto}
+ */
 
+public class ProjetoTest {
+	Projeto a;
+	Tarefa x1;
 	/**
-	 * Testa se a tarefa foi adicionada com sucesso
-	 */
+     * Este método é executado antes de cada teste de unidade (testes a seguir), 
+     * e serve para inicializar objetos que são utilizados nos testes.
+     */
+    @Before
+    public void setUp() throws Exception {
+    	a = new Projeto("Projeto x","criar algo");
+    	x1 = new Tarefa("fazer classe x","implentar a classe x", new GregorianCalendar(2021,9,14,19,0)); 
+    }
+	
+	
+	/**
+     * Teste de unidade que verifica se a tarefa foi adicionada com sucesso
+     */
 	@Test
 	public void  addTarefaTest() {
 		a.addTarefa(x1);
@@ -20,7 +48,7 @@ public class ProjetoTest {
 	}	
 	
 	/** 
-	 * testa se a tarefa foi excluida com sucesso
+	 * Teste de unidade que verifica se a tarefa foi excluida com sucesso
 	 */
 	@Test
 	public void excluirTarefaTest() {
@@ -29,7 +57,7 @@ public class ProjetoTest {
 		assertTrue(a.getTarefas().isEmpty());
 	}
 	/**
-	 * Testa a alteração dos dados de uma tarefa
+	 * Teste de unidade que verifica se a tarefa foi editada corretamente
 	 */
 	@Test
 	public void editarTarefaTest() {
@@ -39,7 +67,7 @@ public class ProjetoTest {
 	}
 	
 	/**
-	 * Testa a busca pelo titulo da tarefa
+	 * Teste de unidade que verifica se a busca pelo titulo da tarefa foi concluida com sucesso
 	 */
 	@Test
 	public void buscarPeloTituloTest() {
