@@ -14,7 +14,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import system.Projeto;
-import system.SystemGerenciador;
+import system.Tarefa;
+
 /*******************************************************************************
 Autor: Alisson Bomfim da Silva e Alexandre Silva Carib�
 Componente Curricular: Algoritmos e Programa��o II
@@ -56,6 +57,7 @@ public class SampleController {
     @FXML
     void backOnAction(ActionEvent event) throws IOException {
     	carregarProjetos();
+    
     }
     
     @FXML
@@ -63,6 +65,33 @@ public class SampleController {
     	Main.sysRef.criarProjeto(title.getText(),descri.getText());
     	carregarProjetos();
     	
+    }
+    
+    void abrirTarefas(ActionEvent event) throws IOException {
+    	Button ori = (Button)event.getSource();
+    	Projeto busPro= Main.sysRef.buscarPeloTitulo(ori.getId());
+    	if(busPro!=null) {
+    		HBox  tarefa = (HBox)FXMLLoader.load(getClass().getResource("tarefa.fxml"));
+    		Main.sysRef.getProjetos().resetIndex();
+        	Tarefa a = busPro.getTarefas().next();
+        	
+        	if(a!=null) {
+        		VBox pro = new VBox();
+    	    	Label title = new Label(a.getTitulo());
+    	    	Label descri = new Label(a.getDescricao());
+    	    	Label previsão = new Label(a.getPrevisao().getTime().toString());
+    	    	
+    	    	Button edit = new Button("editar");
+    	    	Button exclu = new Button("excluir");
+    	    	edit.setId(a.getTitulo());
+    	    	exclu.setId(a.getTitulo());
+    	    	pro.getChildren().addAll(title,descri,previsão,edit,exclu);
+    	    	tarefa.getChildren().addAll(pro);
+        	}
+        	                                      
+    	}
+    	
+    
     }
     
     public void carregarProjetos() throws IOException{
@@ -75,6 +104,7 @@ public class SampleController {
 	    	Label descri = new Label(a.getDescricao());
 	    	Button deta = new Button("ver tarefas");
 	    	deta.setId(a.getTitulo());
+	    	                                                                
 	    	pro.getChildren().addAll(title,descri,deta);
 	    	home.getChildren().addAll(pro);
     	}
