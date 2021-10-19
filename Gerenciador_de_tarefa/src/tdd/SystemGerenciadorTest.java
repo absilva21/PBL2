@@ -4,8 +4,8 @@ import org.junit.Test;
 import system.SystemGerenciador;
 import system.Projeto;
 /*******************************************************************************
-Autor: Alisson Bomfim da Silva e Alexandre Silva CaribÈ
-Componente Curricular: Algoritmos e ProgramaÁ„o II
+Autor: Alisson Bomfim da Silva e Alexandre Silva Carib√©
+Componente Curricular: Algoritmos e Programa√ß√£o II
 Concluido em: 14/10/2011
 Declaro que este c√≥digo foi elaborado por mim de forma individual e n√£o cont√©m nenhum
 trecho de c√≥digo de outro colega ou de outro autor, tais como provindos de livros e
@@ -25,7 +25,7 @@ public class SystemGerenciadorTest {
 	
 	SystemGerenciador sys;
 	/**
-	 * Teste de unidade que verifica se a criaÁ„o de um Projeto ocorreu com sucesso
+	 * Teste de unidade que verifica se a cri√ß√£o de um Projeto ocorreu com sucesso
 	 */
 	@Test
 	public void criarProjetoTest() {
@@ -36,7 +36,7 @@ public class SystemGerenciadorTest {
 	}
 	
 	/**
-	 * Teste de unidade que verifica se o mÈtodo de busca de um Projeto ocorreu com sucesso
+	 * Teste de unidade que verifica se o m√©todo de busca de um Projeto ocorreu com sucesso
 	 */
 	@Test
 	public void buscarPeloTituloTest() {
@@ -45,7 +45,7 @@ public class SystemGerenciadorTest {
 		assertEquals("projeto x", sys.buscarPeloTitulo("projeto x").getTitulo());
 	}
 	/**
-	 * Teste de unidade que verifica se a ediÁ„o dos parametros de um Projeto ocorreu com sucesso
+	 * Teste de unidade que verifica se a edi√ß√£o dos parametros de um Projeto ocorreu com sucesso
 	 */
 	@Test
 	public void editarProjetoTest() {
@@ -56,7 +56,7 @@ public class SystemGerenciadorTest {
 	}
 	
 	/**
-	 * Teste de unidade que verifica se a exclus„o de um Projeto ocorreu com sucesso
+	 * Teste de unidade que verifica se a exclus√£o de um Projeto ocorreu com sucesso
 	 * testa a 
 	 */
 	@Test

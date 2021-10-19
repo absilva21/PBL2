@@ -1,7 +1,7 @@
 package system;
 /*******************************************************************************
-Autor: Alisson Bomfim da Silva e Alexandre Silva CaribÈ
-Componente Curricular: Algoritmos e ProgramaÁ„o II
+Autor: Alisson Bomfim da Silva e Alexandre Silva Carib√©
+Componente Curricular: Algoritmos e Programa√ß√£o II
 Concluido em: 14/10/2011
 Declaro que este c√≥digo foi elaborado por mim de forma individual e n√£o cont√©m nenhum
 trecho de c√≥digo de outro colega ou de outro autor, tais como provindos de livros e
@@ -10,7 +10,7 @@ de outra autoria que n√£o a minha est√° destacado com uma cita√ß√£o para o autor
 do c√≥digo, e estou ciente que estes trechos n√£o ser√£o considerados para fins de avalia√ß√£o.
 ******************************************************************************************/
 /**
- * A classe Tarefa define as tarefas criadas pelo usu·rio para acompanhar seu gerenciador
+ * A classe Tarefa define as tarefas criadas pelo usu√°rio para acompanhar seu gerenciador
  * @author alisson
  * @author Alexandre
  */
@@ -21,18 +21,18 @@ public class Tarefa{
 	private GregorianCalendar previsao;
 	private String situacao;
 	/**
-	 * Constantes para padronizar a situaÁ„o da tarefa
+	 * Constantes para padronizar a situa√ß√£o da tarefa
 	 * @apiNote
 	 */
 	static final String PENDENTE = "Pendente";
-	static final String EM_EXECUCAO = "Em execuÁ„o";
+	static final String EM_EXECUCAO = "Em execu√ß√£o";
 	static final String FINALIZADO = "Finalizada";
 	
 	/**
-	 * Construtor de Tarefa que cria uma nova tarefa inserindo titulo descriÁ„o e previs„o de data
+	 * Construtor de Tarefa que cria uma nova tarefa inserindo titulo descri√ß√£o e previs√£o de data
 	 * @param title, do tipo String e se refere ao titulo da Tarefa
-	 * @param descri, do tipo String e se refere a descriÁ„o da Tarefa
-	 * @param data, do tipo GregorianCalendar e se refere a data de previs„o de conclus„o da Tarefa
+	 * @param descri, do tipo String e se refere a descri√ß√£o da Tarefa
+	 * @param data, do tipo GregorianCalendar e se refere a data de previs√£o de conclus√£o da Tarefa
 	 */
 	public Tarefa(String title, String descri, GregorianCalendar data) {
 		titulo = title;
@@ -41,75 +41,75 @@ public class Tarefa{
 		marcarPendente();
 	}
 	/**
-	 * MÈtodo que devolve o Titulo da Tarefa
+	 * M√©todo que devolve o Titulo da Tarefa
 	 * @return titulo, do tipo String e se refere ao titulo da Tarefa
 	 */
 	public String getTitulo() {
 		return titulo;
 	}
 	/**
-	 * MÈtodo que altera/seta o Titulo da Tarefa
+	 * M√©todo que altera/seta o Titulo da Tarefa
 	 * @param titulo, do tipo String e se refere ao titulo da Tarefa
 	 */
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
 	/**
-	 * MÈtodo que devolve a descriÁ„o da Tarefa
-	 * @return descricao, do tipo String e se refere a descriÁ„o da Tarefa
+	 * M√©todo que devolve a descri√ß√£o da Tarefa
+	 * @return descricao, do tipo String e se refere a descri√ß√£o da Tarefa
 	 */
 	public String getDescricao() {
 		return descricao;
 	}
 	/**
-	 * MÈtodo que altera/seta a descriÁ„o da Tarefa
-	 * @param descricao, do tipo String e se refere a descriÁ„o da Tarefa
+	 * M√©todo que altera/seta a descri√ß√£o da Tarefa
+	 * @param descricao, do tipo String e se refere a descri√ß√£o da Tarefa
 	 */
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
 	/**
-	 * MÈtodo que devolve a data de conclus„o da Tarefa
-	 * @return previsao, do tipo GregorianCalendar e se refere a data de conclus„o da Tarefa
+	 * M√©todo que devolve a data de conclus√£o da Tarefa
+	 * @return previsao, do tipo GregorianCalendar e se refere a data de conclus√£o da Tarefa
 	 */
 	public GregorianCalendar getPrevisao() {
 		return previsao;
 	}
 	/**
-	 * MÈtodo que altera/seta a data de conclus„o da Tarefa
-	 * @param previsao, do tipo GregorianCalendar e se refere a data de conclus„o da Tarefa
+	 * M√©todo que altera/seta a data de conclus√£o da Tarefa
+	 * @param previsao, do tipo GregorianCalendar e se refere a data de conclus√£o da Tarefa
 	 */
 	public void setPrevisao(GregorianCalendar previsao) {
 		this.previsao = previsao;
 	}
 	/**
-	 * MÈtodo que devolve a situaÁ„o da Tarefa
-	 * @return situacao, do tipo String e se refere a situaÁ„o da Tarefa
+	 * M√©todo que devolve a situa√ß√£o da Tarefa
+	 * @return situacao, do tipo String e se refere a situa√ß√£o da Tarefa
 	 */
 	public String getSituacao() {
 		return situacao;
 	}
 	/**
-	 * MÈtodo que altera/seta a situaÁ„o da Tarefa
-	 * @param situacao, do tipo String e se refere a situaÁ„o da Tarefa
+	 * M√©todo que altera/seta a situa√ß√£o da Tarefa
+	 * @param situacao, do tipo String e se refere a situa√ß√£o da Tarefa
 	 */
 	public void setSituacao(String situacao) {
 		this.situacao = situacao;
 	}
 	/**
-	 * MÈtodo que marca situaÁ„o da Tarefa como Pendente
+	 * M√©todo que marca situa√ß√£o da Tarefa como Pendente
 	 */
 	public void marcarPendente() {
 		situacao = Tarefa.PENDENTE;
 	}
 	/**
-	 * MÈtodo que marca situaÁ„o da Tarefa como Em ExecuÁ„o
+	 * M√©todo que marca situa√ß√£o da Tarefa como Em Execu√ß√£o
 	 */
 	public void marcarExecucao() {
 		situacao = Tarefa.EM_EXECUCAO;
 	}
 	/**
-	 * MÈtodo que marca situaÁ„o da Tarefa como Finalizada
+	 * M√©todo que marca situa√ß√£o da Tarefa como Finalizada
 	 */
 	public void marcarFinalizada() {
 		situacao = Tarefa.FINALIZADO;

@@ -9,8 +9,8 @@ import system.Projeto;
 import system.SystemDataHora;
 import java.util.GregorianCalendar;
 /*******************************************************************************
-Autor: Alisson Bomfim da Silva e Alexandre Silva Carib�
-Componente Curricular: Algoritmos e Programa��o II
+Autor: Alisson Bomfim da Silva e Alexandre Silva Caribé
+Componente Curricular: Algoritmos e Programação II
 Concluido em: 14/10/2011
 Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
 trecho de código de outro colega ou de outro autor, tais como provindos de livros e
@@ -26,15 +26,14 @@ do código, e estou ciente que estes trechos não serão considerados para fins 
  * Testes de unidade para a classe {@link Tarefa}
  */
 public class TarefaTest {
-	Tarefa a ;
+	
 	/**
      * Este método é executado antes de cada teste de unidade (testes a seguir), 
      * e serve para inicializar objetos que são utilizados nos testes.
      */
-    @Before
-    public void setUp() throws Exception {
-    	a = new Tarefa("Fazer classe 'x'","Criar a classe x com antecedencia",new GregorianCalendar());
-    }
+
+    Tarefa a = new Tarefa("Fazer classe 'x'","Criar a classe x com antecedencia",new GregorianCalendar());
+   
 	/**
 	 * Teste de unidade que verifica se a tarefa  foi marcada como "Pendente"
 	 */
@@ -49,7 +48,7 @@ public class TarefaTest {
 	@Test
 	public void marcarEmExecTest() {
 		a.marcarExecucao();
-		assertEquals("Em execu��o",a.getSituacao());
+		assertEquals("Em execução",a.getSituacao());
 	}
 	
 	/**

@@ -1,7 +1,7 @@
 package colections;
 /*******************************************************************************
-Autor: Alisson Bomfim da Silva e Alexandre Silva Carib�
-Componente Curricular: Algoritmos e Programa��o II
+Autor: Alisson Bomfim da Silva e Alexandre Silva Caribé
+Componente Curricular: Algoritmos e Programação II
 Concluido em: 14/10/2011
 Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
 trecho de código de outro colega ou de outro autor, tais como provindos de livros e
@@ -10,16 +10,16 @@ de outra autoria que não a minha está destacado com uma citação para o autor
 do código, e estou ciente que estes trechos não serão considerados para fins de avaliação.
 ******************************************************************************************/
 /**
- * A classe LinkList<T> � uma Lista Gen�rica que implementa Iterator
+ * A classe LinkList<T> é uma Lista Genérica que implementa Iterator
  * @author alisson
  * @author Alexandre
  */
 import java.util.Iterator;
 
 public class LinkList<T> implements Iterator{
-	private Link inicio;	//N� cabe�a da Lista Gen�rica
-	private int size;		//Vari�vel que indica o tamanho da lista
-	Link index;				//N� respons�vel pelo index da lista
+	private Link inicio;	//Nó cabeça da Lista Genérica
+	private int size;		//Variável que indica o tamanho da lista
+	Link index;				//Nó responsável pelo index da lista
 	
 	/**
      * Retorna o tamanho da lista.
@@ -29,20 +29,20 @@ public class LinkList<T> implements Iterator{
 		return size;
 	}
 	/**
-     * Retorna o n� index da lista.
-     * @return index, n� da lista.
+     * Retorna o nó index da lista.
+     * @return index, nó da lista.
      */
 	public Link getIndex() {
 		return index;
 	}
 	/**
-     * Seta o n� index da lista.
+     * Seta o nó index da lista.
      */
 	public void setIndex(Link current) {
 		this.index = current;
 	}
 	/**
-     * Reseta o n� index da lista.
+     * Reseta o nó index da lista.
      */
 	public void resetIndex() {
 		if(isEmpty()) {
@@ -53,15 +53,15 @@ public class LinkList<T> implements Iterator{
 		
 	}
 	/**
-     * M�todo que verifica se existe pr�ximo n� e retorna um booleano
-     * @return um booleano, True caso tenha um pr�ximo n� e False caso n�o tenha
+     * Mótodo que verifica se existe próximo nó e retorna um booleano
+     * @return um booleano, True caso tenha um próximo nó e False caso não tenha
      */
 	public boolean hasNext(){
 		return this.index!=null;
 	}
 	/**
-     * M�todo que retorna um tipo T da Lista
-     * @return T, um tipo de dado gen�rico da Lista que foi criada
+     * Método que retorna um tipo T da Lista
+     * @return T, um tipo de dado genérico da Lista que foi criada
      */
 	public T next() {
 		Link data;
@@ -93,16 +93,16 @@ public class LinkList<T> implements Iterator{
 		this.index = this.inicio;
 	}
 	/**
-     * Retorna o n� inicio da lista (n� cabe�a).
-     * @return inicio, n� cabe�a da lista.
+     * Retorna o nó inicio da lista (nó cabeça).
+     * @return inicio, nó cabeça da lista.
      */
 	public Link getInicio() {
 		return inicio;
 	}
 	/**
-     * Indica se a lista est� vazia.
-     * @return True caso o n� cabe�a seja igual a null o que significa que a lista est� vazia,
-     * False caso contr�rio
+     * Indica se a lista está vazia.
+     * @return True caso o nó cabeça seja igual a null o que significa que a lista está vazia,
+     * False caso contrário
      */
 	public boolean isEmpty() {
 		return this.inicio == null;
@@ -125,7 +125,7 @@ public class LinkList<T> implements Iterator{
 		
 	}
 	/**
-     * Retorna o objeto em uma determinada posi��o da lista, sem remove-lo.
+     * Retorna o objeto em uma determinada posição da lista, sem remove-lo.
      * @param index, do objeto a ser recuperado.
      * @return o objeto a ser recuperado ou null caso a lista esteja vazia
      */
@@ -166,7 +166,7 @@ public class LinkList<T> implements Iterator{
 	}
 	
 	/**
-     * Remove o primeiro n� da Lista, deslocando demais elementos seguintes para esquerda.
+     * Remove o primeiro nó da Lista, deslocando demais elementos seguintes para esquerda.
      */
 	public void remove() {
 		Link current = null;
@@ -179,8 +179,8 @@ public class LinkList<T> implements Iterator{
 		}
 	}
 	/**
-     * Remove um n� de uma determinada posi��o, deslocando demais elementos seguintes para esquerda.
-     * @param index, a posi��o do n� a ser removido.
+     * Remove um nó de uma determinada posição, deslocando demais elementos seguintes para esquerda.
+     * @param index, a posição do nó a ser removido.
      */
 	public void remove(int inde) {
 		Link currenta = this.inicio;
@@ -206,7 +206,7 @@ public class LinkList<T> implements Iterator{
 		
 	}
 	/**
-	 * Exibe a Lista caso n�o esteja vazia
+	 * Exibe a Lista caso não esteja vazia
 	 */
 	public void show() {
 		Link current = this.inicio;
