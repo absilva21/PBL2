@@ -11,12 +11,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import system.Projeto;
 import system.SystemGerenciador;
 /*******************************************************************************
-Autor: Alisson Bomfim da Silva e Alexandre Silva Carib�
-Componente Curricular: Algoritmos e Programa��o II
+Autor: Alisson Bomfim da Silva e Alexandre Silva Carib�
+Componente Curricular: Algoritmos e Programa��o II
 Concluido em: 14/10/2011
 Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
 trecho de código de outro colega ou de outro autor, tais como provindos de livros e
@@ -31,7 +32,7 @@ do código, e estou ciente que estes trechos não serão considerados para fins 
 
 public class SampleController {
 	
-	static SystemGerenciador sys;
+	
 	
     @FXML
     private Button add;
@@ -43,59 +44,58 @@ public class SampleController {
     private TextArea descri;
     
     
-    public SampleController() {
-    	sys = new SystemGerenciador();
-    }
     @FXML
     void addOnAction(ActionEvent event) throws IOException {
     	
-    
-    	Scene sceneform = new Scene(Main.form,600,400);
+    	AnchorPane form = (AnchorPane)FXMLLoader.load(getClass().getResource("formularioProjeto.fxml"));
+    	Scene sceneform = new Scene(form,600,400);
     	Main.aux.setScene(sceneform);
      
     }
     
     @FXML
     void backOnAction(ActionEvent event) throws IOException {
-    	
-    	Scene sceneform = new Scene(Main.home,600,400);
-    	Main.aux.setScene(sceneform);
+    	carregarProjetos();
     }
     
     @FXML
     void criaProjetoOnAction(ActionEvent event)throws IOException{
-    	sys.criarProjeto(title.getText(),descri.getText());
+    	Main.sysRef.criarProjeto(title.getText(),descri.getText());
     	carregarProjetos();
     	
     }
     
-    public void carregarProjetos(){
-    	sys.getProjetos().resetIndex();
-    	Projeto a = sys.getProjetos().next();
-    	
+    public void carregarProjetos() throws IOException{
+    	Main.sysRef.getProjetos().resetIndex();
+    	Projeto a = Main.sysRef.getProjetos().next();
+    	HBox home = (HBox)FXMLLoader.load(getClass().getResource("Sample.fxml"));
     	if(a!=null) {
     		VBox pro = new VBox();
 	    	Label title = new Label(a.getTitulo());
 	    	Label descri = new Label(a.getDescricao());
 	    	Button deta = new Button("ver tarefas");
+	    	deta.setId(a.getTitulo());
 	    	pro.getChildren().addAll(title,descri,deta);
-	    	Main.home.getChildren().addAll(pro);
+	    	home.getChildren().addAll(pro);
     	}
     	
     	
-    	while(sys.getProjetos().getIndex()!=null) {
-    		if(a!=null) {
-        		VBox pro = new VBox();
-    	    	Label title = new Label(a.getTitulo());
-    	    	Label descri = new Label(a.getDescricao());
-    	    	Button deta = new Button("ver tarefas");
-    	    	pro.getChildren().addAll(title,descri,deta);
-    	    	Main.home.getChildren().addAll(pro);
-    	    	a = sys.getProjetos().next();
-        	}else {
-        		break;
-        	}
+    	while(Main.sysRef.getProjetos().getIndex()!=null) {
+    		a = Main.sysRef.getProjetos().next();
+    		VBox pro = new VBox();
+    	    Label title = new Label(a.getTitulo());
+    	    Label descri = new Label(a.getDescricao());
+    	    Button deta = new Button("ver tarefas");
+    	    deta.setId(a.getTitulo());
+    	    pro.getChildren().addAll(title,descri,deta);
+    	    home.getChildren().addAll(pro);
+    	    
+        	
+   
     	}
+    	
+    	Scene sceneform = new Scene(home,600,400);
+    	Main.aux.setScene(sceneform);
     	
     }
 }

@@ -4,12 +4,13 @@ import java.io.IOException;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import system.SystemGerenciador;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.fxml.FXMLLoader;
 /*******************************************************************************
-Autor: Alisson Bomfim da Silva e Alexandre Silva Carib�
-Componente Curricular: Algoritmos e Programa��o II
+Autor: Alisson Bomfim da Silva e Alexandre Silva Carib�
+Componente Curricular: Algoritmos e Programa��o II
 Concluido em: 14/10/2011
 Declaro que este código foi elaborado por mim de forma individual e não contém nenhum
 trecho de código de outro colega ou de outro autor, tais como provindos de livros e
@@ -24,13 +25,14 @@ do código, e estou ciente que estes trechos não serão considerados para fins 
 
 public class Main extends Application {
 	static Stage aux;
-	static AnchorPane form;
-	static AnchorPane home;
+	static SystemGerenciador sysRef;
+	
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		aux = primaryStage;
-		form = (AnchorPane)FXMLLoader.load(getClass().getResource("formularioProjeto.fxml"));
-		home = (AnchorPane)FXMLLoader.load(getClass().getResource("Sample.fxml"));
+		SystemGerenciador sys = new SystemGerenciador();
+		sysRef = sys;
+		HBox home = (HBox)FXMLLoader.load(getClass().getResource("Sample.fxml"));
 		
 		try {
 			
